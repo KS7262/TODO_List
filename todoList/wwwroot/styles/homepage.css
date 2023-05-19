@@ -1,0 +1,48 @@
+body {
+    background-color: rgb(233, 244, 244);
+}
+
+
+.todoitem {
+    align-items: flex-start;
+    border-radius: 10%;
+    border: none;
+    background-color: rgb(227, 232, 226);
+    box-shadow: 10px 5px 5px rgb(204, 178, 178);
+    display: flex;
+    font-size: 22px;
+    font-family: 'Outfit', sans-serif;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 500;
+    justify-content: center;
+    margin: 10px;
+    min-height: 220px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    word-wrap: break-word;
+    width: 250px;
+}
+
+
+.newTodo {
+    font-size: 72px;
+    width: 120px;
+    border-radius: 50%;
+    background-color:  #10A37F;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    margin: 4px 2px;
+}
+
+
+.todo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
