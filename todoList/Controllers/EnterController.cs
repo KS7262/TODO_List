@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using todoList.Entities;
+using System.IO;
 
 namespace todoList.Controllers
 {
@@ -29,6 +30,7 @@ namespace todoList.Controllers
                     else
                     {
                         DbActionsUser.CreateUser(new User { NickName = nickname, Email = email, Password = password});
+                        Directory.CreateDirectory($"wwwroot/UsersFiles/{nickname}");
                         return RedirectToAction("HomePage", "Home");
                     }
                 }
