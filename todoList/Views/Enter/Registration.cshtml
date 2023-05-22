@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,19 +17,20 @@
 </head>
 <body>
     <div class="container">
-        <form>
+        <form method="post" action="~/Enter/InitRegistration">
             <div asp-validation-summary="ModelOnly"></div>
             <div>
-                <input type="text" placeholder="Nickname">
+                <input type="text" placeholder="Nickname" name="nickname">
             </div>
             <div>
-                <input type="text" placeholder="Email">
+                <input type="text" placeholder="Email" name="email">
             </div>
             <div>
-                <input type="text" placeholder="Password">
+                <input type="password" placeholder="Password" name="password">
             </div>
             <button type="submit">Sign up</button>
         </form>
+
     </div>
 </body>
 </html>

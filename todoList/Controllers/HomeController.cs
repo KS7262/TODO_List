@@ -6,7 +6,7 @@ namespace todoList.Controllers
     {
         public IActionResult HomePage()
         {
-            return View();
+            return View("HomePage");
         }
         public IActionResult Create()
         {
