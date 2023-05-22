@@ -39,8 +39,13 @@ namespace todoList.Controllers
             return View("Registration");
         }
 
-        public IActionResult Autorization()
+        public IActionResult Autorization(string email, string password)
         {
+            if (DbActionsUser.ReadByPassword(email, password) != null)
+            {
+                return RedirectToAction("HomePage", "Home");
+            }
+
             return View();
         }
     }
