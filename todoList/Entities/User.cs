@@ -6,13 +6,17 @@ namespace todoList.Entities
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Enter your nickname!")]
+        [RegularExpression(@"^(?!.*\s\s)\S.*$", ErrorMessage = "Enter correct NickName")]
         public string NickName { get; set;}
 
-        [Required, RegularExpression(@"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$")]
+        [Required(ErrorMessage = "")]
+        [RegularExpression(@"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$", ErrorMessage = "Enter the correct email")]
         public string Email { get; set;}
 
-        [Required, MinLength(8), RegularExpression(@"^\S+$")] 
+        [Required(ErrorMessage = "Enter password")]
+        [MinLength(8, ErrorMessage = "Min length must be 8 symbols")] 
+        [RegularExpression(@"^\S+$", ErrorMessage = "Enter correct password")] 
         public string Password { get; set;}
 
     }

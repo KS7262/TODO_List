@@ -19,19 +19,17 @@
 <body>
     <div class="container">
         <form>
+            <div asp-validation-summary="ModelOnly"></div>
             <div>
-                <input type="text" placeholder="Ім'я">
+                <input type="text" placeholder="Nickname">
             </div>
             <div>
-                <input type="number" placeholder="Вік">
+                <input type="text" placeholder="Email">
             </div>
             <div>
-                <input type="text" placeholder="Пошта">
+                <input type="text" placeholder="Password">
             </div>
-            <div>
-                <input type="text" placeholder="Пароль">
-            </div>
-            <button type="submit">Зареєструватись</button>
+            <button type="submit">Sign up</button>
         </form>
     </div>
 </body>

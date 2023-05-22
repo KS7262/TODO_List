@@ -11,7 +11,8 @@ namespace todoList.Entities
         [ForeignKey("User")]
         public int UserId { get; set; }
 
-        [Required, MinLength(3)]
+        [Required(ErrorMessage = "Enter the title")]
+        [MinLength(3, ErrorMessage = "Min length must be 3 symbols")]
         public string Title { get; set; }
 
         [Required]
