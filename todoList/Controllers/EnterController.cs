@@ -43,6 +43,7 @@ namespace todoList.Controllers
         {
             if (DbActionsUser.ReadByPassword(email, password) != null)
             {
+                HomeController.user = DbActionsUser.ReadByPassword(email, password);
                 return RedirectToAction("HomePage", "Home");
             }
 

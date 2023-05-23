@@ -48,7 +48,6 @@ function handleSubmit() {
     form.submit();
 }
 
-// Добавьте обработчик события для формы
 var form = document.getElementById('todoForm');
 form.addEventListener('submit', function (event) {
     event.preventDefault();

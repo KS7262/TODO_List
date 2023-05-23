@@ -9,6 +9,7 @@
   <ItemGroup>
     <Folder Include="wwwroot\styles\" />
     <Folder Include="wwwroot\UsersFiles\KS7262\" />
+    <Folder Include="wwwroot\UsersFiles\User1\" />
   </ItemGroup>
 
   <ItemGroup>
