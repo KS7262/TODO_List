@@ -12,5 +12,14 @@ namespace todoList.Controllers
         {
             return View();
         }
+
+        public IActionResult SetNewTodo(string title, List<string> tasks)
+        {
+            foreach (var task in tasks)
+            {
+                Console.WriteLine(task);
+            }
+            return View("HomePage");
+        }
     }
 }

@@ -19,17 +19,17 @@
 </head>
 <body>
     <div class="container">
-        <form>
+        <form id="todoForm" method="post" action="~/Home/SetNewTodo">
             <div class="input-container">
-                <input type="text" placeholder="Title">
+                <input name="title" type="text" placeholder="Title">
             </div>
             <div id="inputContainer">
                 <div class="input-container">
-                    <input type="text" placeholder="Task">
+                    <input name="tasks[0]" type="text" placeholder="Task">
                 </div>
             </div>
             <div class="buttons">
-                <button class="add" onclick="addInput(event)">Add task</button>
+                <button type="button" class="add" onclick="addInput(event)">Add task</button>
                 <button type="submit">Save</button>
             </div>
         </form>
