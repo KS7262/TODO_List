@@ -31,6 +31,7 @@ namespace todoList.Controllers
                     {
                         DbActionsUser.CreateUser(new User { NickName = nickname, Email = email, Password = password});
                         Directory.CreateDirectory($"wwwroot/UsersFiles/{nickname}");
+                        HomeController.user = DbActionsUser.ReadByPassword(email, password);
                         return RedirectToAction("HomePage", "Home");
                     }
                 }

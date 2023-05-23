@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model List<string>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,10 +17,14 @@
 </head>
 <body>
     <div>
-        <h1>Title</h1>
-        <input type="checkbox"> <span>Some text of input</span>
+        <h1>@ViewBag.Title</h1>
+        @foreach (var task in Model)
+        {
+            <input type="checkbox"> <span>@task</span>
+            <br />
+        }
     </div>
-    <form>
+    <form action="~/TodoDetails/DeleteTodo">
         <button type="submit">Delete TODO</button>
     </form>
 </body>

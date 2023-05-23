@@ -12,13 +12,13 @@ namespace todoList
                 context.SaveChanges();
             }
         }
-        public static Todo? ReadTodo(int id)
+        public static Todo? ReadTodoByTitle(string title)
         {
             using (TodoContext context = new TodoContext())
             {
                 foreach (Todo todo in context.Todoes)
                 {
-                    if (todo.Id == id)
+                    if (todo.Title == title)
                         return todo;
                 }
 

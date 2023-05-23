@@ -9,7 +9,16 @@ namespace todoList.Controllers
         public static User user { private get; set; }
         public IActionResult HomePage()
         {
-            return View("HomePage");
+            List<string> titles = new List<string>();
+            using (TodoContext context = new TodoContext())
+            {
+                foreach (var item in context.Todoes.Where(u => u.User == user))
+                {
+                    titles.Add(item.Title);
+                }
+            }
+
+            return View("HomePage", titles);
         }
         public IActionResult Create()
         {
@@ -36,5 +45,7 @@ namespace todoList.Controllers
                 }
             }
         }
+
+        
     }
 }

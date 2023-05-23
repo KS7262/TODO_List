@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model List<string>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,7 +17,13 @@
 </head>
 <body>
     <div class="todo-container">
-        <button class="todoitem">Text 1</button>
+        @foreach (var item in @Model)
+        {
+            <form method="get" action="~/TodoDetails/TodoDetails">
+                <input type="hidden" name="title" value="@item" />
+                <button type="submit" class="todoitem">@item</button>
+            </form>
+        }
     </div>
     <form method="get" action="~/Home/Create">
         <button class="newTodo">+</button>
