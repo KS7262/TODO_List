@@ -8,17 +8,8 @@ namespace todoList.Controllers
     {
         public static User user { private get; set; }
         public IActionResult HomePage()
-        {
-            List<string> titles = new List<string>();
-            using (TodoContext context = new TodoContext())
-            {
-                foreach (var item in context.Todoes.Where(u => u.User == user))
-                {
-                    titles.Add(item.Title);
-                }
-            }
-
-            return View("HomePage", titles);
+        { 
+            return View("HomePage", DbActionsTodoes.GetTodoes(user));
         }
         public IActionResult Create()
         {
@@ -30,7 +21,7 @@ namespace todoList.Controllers
 
             DbActionsTodoes.CreateTodo(new Todo { Title = title, UserId = user.Id, Src = $"wwwroot/UsersFiles/{user.NickName}/{title}.txt"});
             WriteTodoTasks(title, tasks);
-            return View("HomePage");
+            return View("HomePage", DbActionsTodoes.GetTodoes(user));
         }
 
         private async Task WriteTodoTasks(string title, List<string> tasks)

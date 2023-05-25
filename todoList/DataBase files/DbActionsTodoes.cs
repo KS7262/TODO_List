@@ -41,5 +41,18 @@ namespace todoList
                 context.SaveChanges();
             }
         }
+
+        public static List<string> GetTodoes(User user)
+        {
+            List<string> titles = new List<string>();
+            using (TodoContext context = new TodoContext())
+            {
+                foreach (var item in context.Todoes.Where(u => u.User == user))
+                {
+                    titles.Add(item.Title);
+                }
+            }
+            return titles;
+        }
     }
 }

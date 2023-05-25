@@ -17,7 +17,7 @@
 </head>
 <body>
     <div class="todo-container">
-        @foreach (var item in @Model)
+        @foreach (var item in Model)
         {
             <form method="get" action="~/TodoDetails/TodoDetails">
                 <input type="hidden" name="title" value="@item" />
