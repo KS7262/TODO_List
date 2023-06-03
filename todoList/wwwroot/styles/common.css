@@ -18,3 +18,6 @@ input {
     font-size: 16px;
     padding-left: 10px;
 }
+button:hover {
+    cursor:pointer;
+}
