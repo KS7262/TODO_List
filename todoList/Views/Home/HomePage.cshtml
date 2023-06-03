@@ -19,7 +19,7 @@
     <div class="todo-container">
         @foreach (var item in Model)
         {
-            <form method="get" action="~/TodoDetails/TodoDetails">
+            <form method="get" asp-controller="TodoDetails" asp-action="TodoDetails">
                 <input type="hidden" name="title" value="@item" />
                 <button type="submit" class="todoitem">@item</button>
             </form>

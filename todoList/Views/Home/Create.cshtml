@@ -19,7 +19,7 @@
 </head>
 <body>
     <div class="container">
-        <form id="todoForm" method="post" action="~/Home/SetNewTodo">
+        <form id="todoForm" method="post" asp-controller="Home" asp-action="SetNewTodo">
             <div class="input-container">
                 <input name="title" type="text" placeholder="Title">
             </div>

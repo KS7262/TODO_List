@@ -17,8 +17,8 @@
 </head>
 <body>
     <div class="container">
-        <form method="post" action="~/Enter/InitRegistration">
-            <div asp-validation-summary="ModelOnly"></div>
+        <form method="post" asp-controller="Enter" asp-action="InitRegistration">
+            <div asp-validation-summary="ModelOnly" style="font-size:16px"></div>
             <div>
                 <input type="text" placeholder="Nickname" name="nickname">
             </div>
