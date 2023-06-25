@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using todoList.Entities; 
+@model User
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,15 +20,17 @@
 <body>
     <div class="container">
         <form method="post" asp-controller="Enter" asp-action="InitRegistration">
-            <div asp-validation-summary="ModelOnly" style="font-size:16px"></div>
             <div>
-                <input type="text" placeholder="Nickname" name="nickname">
+                <input type="text" placeholder="Nickname" name="nickname"> <br />
+                <span class="text-error" asp-validation-for="NickName"></span>
             </div>
             <div>
-                <input type="text" placeholder="Email" name="email">
+                <input type="text" placeholder="Email" name="email"> <br />
+                <span class="text-error" asp-validation-for="Email"></span>
             </div>
             <div>
-                <input type="password" placeholder="Password" name="password">
+                <input type="password" placeholder="Password" name="password"> <br />
+                <span class="text-error" asp-validation-for="Password"></span>
             </div>
             <button type="submit">Sign up</button>
         </form>

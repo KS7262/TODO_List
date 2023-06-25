@@ -17,3 +17,7 @@ button {
     align-items: center;
     height: 100vh;
 }
+.text-error {
+    font-size: 14px;
+    color: red;
+}
