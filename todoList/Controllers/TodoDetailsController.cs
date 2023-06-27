@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using todoList.Entities;
 
 namespace todoList.Controllers
 {
+    [Authorize]
     public class TodoDetailsController : Controller
     {
         private static Todo todo { get; set; }

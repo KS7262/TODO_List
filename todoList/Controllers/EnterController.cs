@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using todoList.Entities;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using System.Security.Claims;
 
 namespace todoList.Controllers
 {
@@ -44,7 +47,14 @@ namespace todoList.Controllers
         {
             if (DbActionsUser.ReadByPassword(email, password) != null)
             {
-                HomeController.user = DbActionsUser.ReadByPassword(email, password);
+
+                User user = DbActionsUser.ReadByPassword(email, password);
+                HomeController.user = user;
+
+                var claims = new List<Claim> { new Claim(ClaimTypes.Name, user.Email) };
+                ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, "Cookies");
+                HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
+
                 return RedirectToAction("HomePage", "Home");
             }
 

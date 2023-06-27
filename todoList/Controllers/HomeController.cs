@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using todoList.Entities;
 using System.IO;
+using Microsoft.AspNetCore.Authorization;
 
 namespace todoList.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         public static User user { private get; set; }
